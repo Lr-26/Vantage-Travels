@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080808;
+  --foreground: #F5F5F5;
+  
+  --accent-gold: #C5A059;
+  --accent-silver: #E0E0E0;
+  --matte-black: #0C0C0C;
+  --charcoal: #151515;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-gold: var(--accent-gold);
+  --color-silver: var(--accent-silver);
+  --color-matte: var(--matte-black);
+  --color-charcoal: var(--charcoal);
+
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-cormorant);
+
+  @keyframes shimmer {
+    from { background-position: 0 0; }
+    to { background-position: -200% 0; }
+  }
+  --animation-shimmer: shimmer 2s linear infinite;
+
+  @keyframes border-beam {
+    100% { offset-distance: 100%; }
+  }
+  --animation-border-beam: border-beam 4s linear infinite;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+/* Custom Scrollbar for Luxury Feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-charcoal);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
